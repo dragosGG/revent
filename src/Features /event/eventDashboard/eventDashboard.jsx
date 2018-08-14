@@ -55,12 +55,11 @@ const eventsDashboard = [
 ];
 
 class EventDashboard extends Component {
+  state = {
+    events: eventsDashboard,
+    isOpen: false
+  };
 
- state = {
-      events: eventsDashboard,
-      isOpen: false
-    };
-  }
   handleFormOpen = () => {
     this.setState({
       isOpen: true

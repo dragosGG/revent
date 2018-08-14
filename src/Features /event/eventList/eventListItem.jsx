@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Segment, Item, Icon, List, Button } from "semantic-ui-react";
 import EventListAttendee from "./eventListAttendee";
-import EventDashboard from "../eventDashboard/EventDashboard";
+// import EventDashboard from "../eventDashboard/eventDashboard";
 
 class EventListItem extends Component {
   render() {
