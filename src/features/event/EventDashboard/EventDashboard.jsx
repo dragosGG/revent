@@ -105,12 +105,18 @@ class EventDashboard extends Component {
     });
   };
 
+  handleDeleteEvent = eventId => () => {
+    const updatedEvents = this.state.event.filter(e => e.id !== eventId);
+    this.setState({ events: updatedEvents });
+  };
+
   render() {
     const { selectedEvent } = this.state;
     return (
       <Grid>
         <Grid.Column width={10}>
           <EventList
+            deleteEvent={this.handleDeleteEvent}
             onEventOpen={this.handleOpenEvent}
             events={this.state.events}
           />
@@ -123,7 +129,7 @@ class EventDashboard extends Component {
           />
           {this.state.isOpen && (
             <EventForm
-              updatedEvent={this.handleUpdateEvent}
+              updateEvent={this.handledUpdateEvent}
               selectedEvent={selectedEvent}
               handleCancel={this.handleCancel}
               createEvent={this.handleCreateEvent}
