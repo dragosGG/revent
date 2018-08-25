@@ -1,6 +1,6 @@
 import React from "react";
 
-const HomePage = props => {
+const HomePage = ({ history }) => {
   return (
     <div>
       <div className="ui inverted vertical masthead center aligned segment">
@@ -15,10 +15,10 @@ const HomePage = props => {
           </h1>
           <h2>Do whatever you want to do</h2>
           <div
-            onlClick={() => this.history.push("/events")}
+            onClick={() => history.push("/event")}
             className="ui huge white inverted button"
           >
-            Get Started
+            Join The Fun
             <i className="right arrow icon" />
           </div>
         </div>
