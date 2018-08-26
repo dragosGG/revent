@@ -18,7 +18,6 @@ let render = () => {
       <BrowserRouter>
         <App />
       </BrowserRouter>
-      ,
     </Provider>,
     rootEl
   );

@@ -3,7 +3,7 @@ const initialState = {
 };
 
 const testReducer = (state = initialState, action) => {
-  return this.state;
+  return state;
 };
 
 export default testReducer;

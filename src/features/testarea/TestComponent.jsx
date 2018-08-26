@@ -10,7 +10,7 @@ class TestComponent extends Component {
     return (
       <div>
         <h1>Test Area</h1>
-        <h3> The answer is: {this.props.data}</h3>
+        <h3> The answer is: {this.props.data} </h3>
       </div>
     );
   }
