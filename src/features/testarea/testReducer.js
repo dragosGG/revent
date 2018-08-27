@@ -9,7 +9,7 @@ const testReducer = (state = initialState, action) => {
     case INCREMENT_COUNTER:
       return { ...state, data: state.data + 1 };
     case DECREMENT_COUNTER:
-      return { ...state, data: state.dta - 1 };
+      return { ...state, data: state.data - 1 };
     default:
       return state;
   }
