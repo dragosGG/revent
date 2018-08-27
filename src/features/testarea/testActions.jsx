@@ -6,7 +6,7 @@ export const incrementCounter = () => {
   };
 };
 
-export const decremnetCounter = () => {
+export const decrementCounter = () => {
   return {
     type: DECREMENT_COUNTER
   };

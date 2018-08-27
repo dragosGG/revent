@@ -1,16 +1,16 @@
-import { createReducer } from "../../app/common/util/reducerUtil";
 import { INCREMENT_COUNTER, DECREMENT_COUNTER } from "./testConstants";
+import { createReducer } from "../../app/common/util/reducerUtil";
 
 const initialState = {
   data: 43
 };
 
 export const incrementCounter = (state, payload) => {
-  return { ...state, date: state.data + 1 };
+  return { ...state, data: state.data + 1 };
 };
 
 export const decrementCounter = (state, payload) => {
-  return { ...state, date: state.data - 1 };
+  return { ...state, data: state.data - 1 };
 };
 
 // const testReducer = (state = initialState, action) => {
