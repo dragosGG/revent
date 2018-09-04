@@ -65,6 +65,12 @@ class EventForm extends Component {
     return (
       <Segment>
         <Form onSubmit={this.onFormSubmit}>
+          <Field
+            name="title"
+            type="text"
+            component="input"
+            placeholder="Event Title"
+          />
           <Form.Field>
             <label>Event Title</label>
             <input
@@ -124,6 +130,6 @@ class EventForm extends Component {
 }
 
 export default connect(
-  mapState
-  actions)(reduxForm({form: 'eventForm'})
-(EventForm));
+  mapState,
+  actions
+)(reduxForm({ form: "eventForm" })(EventForm));
