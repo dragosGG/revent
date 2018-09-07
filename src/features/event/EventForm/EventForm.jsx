@@ -1,12 +1,20 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { reduxForm, Field } from "redux-form";
+import moment from "moment";
 import cuid from "cuid";
 import { Segment, Form, Button, Grid, Header } from "semantic-ui-react";
+import {
+  composeValidators,
+  combineValidators,
+  isRequired,
+  hasLengthGreaterThan
+} from "revalidate";
 import { createEvent, updateEvent } from "../eventActions";
 import TextInput from "../../../app/common/form/TextInput";
 import TextArea from "../../../app/common/form/TextArea";
 import SelectInput from "../../../app/common/form/SelectInput";
+import DateInput from "../../../app/common/form/DateInput";
 
 const mapState = (state, ownProps) => {
   const eventId = ownProps.match.params.id;
@@ -18,7 +26,7 @@ const mapState = (state, ownProps) => {
   }
 
   return {
-    initialValue: event
+    initialValues: event
   };
 };
 
@@ -35,9 +43,25 @@ const category = [
   { key: "music", text: "Music", value: "music" },
   { key: "travel", text: "Travel", value: "travel" }
 ];
+
+const validate = combineValidators({
+  title: isRequired({ message: "The event title is required" }),
+  category: isRequired({ message: "Please provide a category" }),
+  description: composeValidators(
+    isRequired({ message: "Please enter a description" }),
+    hasLengthGreaterThan(4)({
+      message: "Description needs to be at least 5 characters"
+    })
+  )(),
+  city: isRequired("city"),
+  venue: isRequired("venue"),
+  date: isRequired("date")
+});
+
 class EventForm extends Component {
   onFormSubmit = values => {
-    if (this.props.initialValue.id) {
+    values.date = moment(values.date).format();
+    if (this.props.initialValues.id) {
       this.props.updateEvent(values);
       this.props.history.goBack();
     } else {
@@ -53,6 +77,7 @@ class EventForm extends Component {
   };
 
   render() {
+    const { invalid, submitting, pristine } = this.props;
     return (
       <Grid>
         <Grid.Column width={10}>
@@ -122,4 +147,8 @@ class EventForm extends Component {
 export default connect(
   mapState,
   actions
-)(reduxForm({ form: "eventForm", enableReinitialize: true })(EventForm));
+)(
+  reduxForm({ form: "eventForm", enableReinitialize: true, validate })(
+    EventForm
+  )
+);
