@@ -49,7 +49,7 @@ const EventDetailedHeader = ({ event }) => {
 
         <Button
           as={Link}
-          to={`/manage${event.id}`}
+          to={`/manage/${event.id}`}
           color="orange"
           floated="right"
         >
