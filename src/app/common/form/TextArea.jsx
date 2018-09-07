@@ -16,7 +16,6 @@ const TextArea = ({
             {error}
           </Label>
         )}
-      />
     </Form.Field>
   );
 };
