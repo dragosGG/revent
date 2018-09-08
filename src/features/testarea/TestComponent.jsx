@@ -44,17 +44,18 @@ class TestComponent extends Component {
     const { incrementCounter, decrementCounter, data } = this.props;
     return (
       <div>
-        <Script>
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQ_5-P06RO7YfrLHalAvAfZ1Gw0UbGbLM
-          &libraries=places" onload=
-          {this.handleScriptLoad}
-        </Script>
+        <Script
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkLq81VEJpVWh8s0XLufwPg_LgTF_8-Bk&libraries=places"
+          onload={this.handleScriptLoad}
+        />
 
         <h1>Test Area</h1>
         <h3>The answer is: {data}</h3>
         <Button onClick={incrementCounter} color="green" content="Increment" />
 
         <Button onClick={decrementCounter} color="red" content="Decrement" />
+        <br />
+        <br />
         <br />
         <form onSubmit={this.handleFormSubmit}>
           {this.state.scriptLoaded && (
