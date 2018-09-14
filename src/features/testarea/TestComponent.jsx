@@ -60,7 +60,7 @@ class TestComponent extends Component {
     return (
       <div>
         {/* <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTN8X_q_xtMYCnacteF4ZQj0RKXodI080&libraries=places"
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKyCJwVAPOqnezc-M9A8mQYhncQ4k1Z1U&libraries=places"
           onLoad={this.handleScriptLoad}
         /> */}
         <h1>Test Area</h1>
@@ -78,7 +78,7 @@ class TestComponent extends Component {
 
       <div style={{ height: '300px', width: '100%' }}>
         <GoogleMapReact
-          bootstrapURLKeys={{ key: 'AIzaSyCkLq81VEJpVWh8s0XLufwPg_LgTF_8-Bk' }}
+          bootstrapURLKeys={{ key: 'AIzaSyBKyCJwVAPOqnezc-M9A8mQYhncQ4k1Z1U'}}
           defaultCenter={this.props.center}
           defaultZoom={this.props.zoom}
         >
