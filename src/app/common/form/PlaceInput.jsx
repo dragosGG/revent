@@ -1,20 +1,21 @@
-import React, { Component } from "react";
-import { Form, Label } from "semantic-ui-react";
-import Script from "react-load-script";
-import PlacesAutoComplete from "react-places-autocomplete";
+import React, { Component } from 'react';
+import { Form, Label } from 'semantic-ui-react';
+import Script from 'react-load-script';
+import PlacesAutocomplete from 'react-places-autocomplete';
 
 const styles = {
-  autocompletecContainer: {
+  autocompleteContainer: {
     zIndex: 1000
   }
-};
+}
 
 class PlaceInput extends Component {
   state = {
     scriptLoaded: false
   };
 
-  handleScritLoaded = () => this.setState({ scriptLoaded: true });
+  handleScriptLoaded = () => this.setState({ scriptLoaded: true });
+
   render() {
     const {
       input,
@@ -27,11 +28,11 @@ class PlaceInput extends Component {
     return (
       <Form.Field error={touched && !!error} width={width}>
         <Script
-          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkLq81VEJpVWh8s0XLufwPg_LgTF_8-Bk&libraries=places"
-          onload={this.handleScriptLoaded}
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTN8X_q_xtMYCnacteF4ZQj0RKXodI080&libraries=places"
+          onLoad={this.handleScriptLoaded}
         />
         {this.state.scriptLoaded && (
-          <PlacesAutoComplete
+          <PlacesAutocomplete
             inputProps={{ ...input, placeholder }}
             options={options}
             onSelect={onSelect}
