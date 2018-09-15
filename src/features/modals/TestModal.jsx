@@ -3,6 +3,8 @@ import { Modal } from 'semantic-ui-react';
 import { closeModal } from './modalActions'
 import { connect } from 'react-redux'
 
+
+
 const actions = {
   closeModal
 }
