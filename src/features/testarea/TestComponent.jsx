@@ -11,7 +11,7 @@ import { incrementAsync, decrementAsync } from './testActions';
 import { openModal } from '../modals/modalActions'
 
 const mapState = state => ({
-  data: state.test,
+  data: state.test.data,
   loading: state.test.loading
 });
 

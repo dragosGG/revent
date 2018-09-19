@@ -120,7 +120,8 @@ class EventForm extends Component {
     return (
       <Grid>
         <Script
-url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkLq81VEJpVWh8s0XLufwPg_LgTF_8-Bk&libraries=places"          onLoad={this.handleScriptLoaded}
+          url="https://maps.googleapis.com/maps/api/js?key=AIzaSyCTN8X_q_xtMYCnacteF4ZQj0RKXodI080&libraries=places"
+          onLoad={this.handleScriptLoaded}
         />
         <Grid.Column width={10}>
           <Segment>
@@ -200,4 +201,3 @@ export default connect(mapState, actions)(
     EventForm
   )
 );
-/* */
