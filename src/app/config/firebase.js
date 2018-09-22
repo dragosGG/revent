@@ -12,6 +12,9 @@ const firebaseConfig={
 
 
 firebase.initializeApp(firebaseConfig)
-firebase.firestore();
-
+const firebase = firebase.firestore();
+const settings = {
+    timestampsinsnapshots: true
+} 
+firestore.settings.(settings);
 export default firebase 
