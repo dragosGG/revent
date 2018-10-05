@@ -5,6 +5,7 @@ const initialState = {
   loading: false
 }
 
+
 export const asyncActionStarted = (state, payload) => {
   return {...state, loading: true}
 }
