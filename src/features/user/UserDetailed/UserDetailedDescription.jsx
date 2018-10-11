@@ -4,9 +4,9 @@ import format from 'date-fns/format';
 
 const UserDetailedDescription = ({ profile }) => {
   let createdAt;
-  if (profile.createdAt) {
-    createdAt = format(profile.createdAt.toDate(), 'D MMM YYYY');
-  }
+  // if (profile.createdAt) {
+  //   createdAt = format(profile.createdAt.toDate(), 'DD MM YYYY');
+  // }
   return (
     <Grid.Column width={12}>
       <Segment>
