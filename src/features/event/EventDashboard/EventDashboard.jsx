@@ -22,7 +22,7 @@ class EventDashboard extends Component {
 
   render() {
     const { events } = this.props;
-    if (!isLoaded(events) || isEmpty(events)) return <LoadingComponent inverted={true} />;
+    // if (!isLoaded(events) || isEmpty(events)) return <LoadingComponent inverted={true} />;
 
     return (
       <Grid>
