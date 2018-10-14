@@ -9,12 +9,8 @@ import { fetchSampleData } from '../../app/data/mockAPI';
 import { createNewEvent } from '../../app/common/util/helpers';
 import moment from 'moment';
 
-export const fetchEvents = events => {
-  return {
-    type: FETCH_EVENTS,
-    payload: events
-  };
-};
+
+
 
 export const createEvent = event => {
   return async (dispatch, getState, { getFirestore }) => {

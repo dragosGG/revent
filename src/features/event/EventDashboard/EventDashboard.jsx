@@ -2,20 +2,25 @@ import React, { Component } from 'react';
 import { Grid } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { firestoreConnect, isLoaded, isEmpty } from 'react-redux-firebase';
-import { deleteEvent } from '../eventActions';
+import { getEventForDashboard } from '../eventActions';
 import EventList from '../EventList/EventList';
 import LoadingComponent from '../../../app/layout/LoadingComponent';
 import EventActivity from '../EventActivity/EventActivity';
 
 const mapState = state => ({
-  events: state.firestore.ordered.events,
+  events: []
 });
 
 const actions = {
-  deleteEvent
+  getEventForDashboard
 };
 
 class EventDashboard extends Component {
+
+  componentDidMount() {
+    this.props.getEventForDashboard();
+  }
+
   handleDeleteEvent = eventId => () => {
     this.props.deleteEvent(eventId);
   };
