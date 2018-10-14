@@ -88,10 +88,13 @@ async (dispatch, getState) => {
       let evt = {...querySnap.doc[i].data(), id: querySnap.doc[i].id};
       events.push(evt);
     }
+    dispatch({type: FETCH_EVENTS, payload: {events}})
+    dispatch(asyncActionFinish())
     console.log(events);
     console.log(querySnap)
   }
   catch(error) {
     console.log(error)
+    dispatch(asyncActionError())
   }
 } 

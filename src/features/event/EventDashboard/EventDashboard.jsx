@@ -8,7 +8,8 @@ import LoadingComponent from '../../../app/layout/LoadingComponent';
 import EventActivity from '../EventActivity/EventActivity';
 
 const mapState = state => ({
-  events: []
+  events: state.events,
+  loading: state.async.loading
 });
 
 const actions = {
@@ -26,7 +27,7 @@ class EventDashboard extends Component {
   };
 
   render() {
-    const { events } = this.props;
+    const { events, loading } = this.props;
     // if (!isLoaded(events) || isEmpty(events)) return <LoadingComponent inverted={true} />;
 
     return (
