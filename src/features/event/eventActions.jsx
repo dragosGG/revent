@@ -8,6 +8,7 @@ import {
 import { fetchSampleData } from '../../app/data/mockAPI';
 import { createNewEvent } from '../../app/common/util/helpers';
 import moment from 'moment';
+import firebase from  '../../app/config/firebase';
 
 
 
@@ -71,25 +72,26 @@ export const cancelToggle = (cancelled, eventId) => async (
   }
 };
 
-export const deleteEvent = eventId => {
-  return {
-    type: DELETE_EVENT,
-    payload: {
-      eventId
-    }
-  };
-};
 
-export const loadEvents = () => {
-  return async dispatch => {
-    try {
-      dispatch(asyncActionStart());
-      let events = await fetchSampleData();
-      dispatch(fetchEvents(events));
-      dispatch(asyncActionFinish());
-    } catch (error) {
-      console.log(error);
-      dispatch(asyncActionError());
+
+export const getEventForDashboard = () => 
+async (dispatch, getState) => {
+  let today = new Date(Date.now());
+  const firestore = firebase.firestore();
+  const eventsQuery= firestore.collection('events').where('date', '>=', today);
+  console.log(eventsQuery);
+  try {
+    let querySnap = await eventsQuery.get()
+    let events=[];
+
+    for (let i=0; i<querySnap.docs.length; i++) {
+      let evt = {...querySnap.doc[i].data(), id: querySnap.doc[i].id};
+      events.push(evt);
     }
-  };
-};
+    console.log(events);
+    console.log(querySnap)
+  }
+  catch(error) {
+    console.log(error)
+  }
+} 
