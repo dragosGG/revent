@@ -18,4 +18,3 @@ const settings = {
 }
 firestore.settings(settings)
 export default firebase;
-
