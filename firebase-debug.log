@@ -1,0 +1,17 @@
+[debug] [2018-10-23T12:29:02.547Z] ----------------------------------------------------------------------
+[debug] [2018-10-23T12:29:02.550Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-10-23T12:29:02.550Z] CLI Version:   5.0.1
+[debug] [2018-10-23T12:29:02.550Z] Platform:      darwin
+[debug] [2018-10-23T12:29:02.550Z] Node Version:  v8.11.3
+[debug] [2018-10-23T12:29:02.551Z] Time:          Tue Oct 23 2018 14:29:02 GMT+0200 (CEST)
+[debug] [2018-10-23T12:29:02.551Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-10-23T12:29:02.565Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-10-23T12:29:02.565Z] > authorizing via signed-in user
+[debug] [2018-10-23T12:29:02.565Z] [iam] checking project modular-seeker-215717 for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2018-10-23T12:29:02.568Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/modular-seeker-215717:testIamPermissions  
+
+[debug] [2018-10-23T12:29:03.425Z] <<< HTTP RESPONSE 200
+[debug] [2018-10-23T12:29:03.426Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/modular-seeker-215717  
+ 
+[debug] [2018-10-23T12:29:04.032Z] <<< HTTP RESPONSE 200
