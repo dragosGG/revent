@@ -20,7 +20,7 @@ const actions = {
   decrementAsync,
   openModal
 };
- 
+  
 // const Marker = () => <Icon name='marker' size='big' color='red'/>
 
 class TestComponent extends Component {
