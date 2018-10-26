@@ -14,7 +14,7 @@ const mapState = state => ({
   data: state.test.data,
   loading: state.test.loading
 });
-
+ 
 const actions = {
   incrementAsync,
   decrementAsync,
